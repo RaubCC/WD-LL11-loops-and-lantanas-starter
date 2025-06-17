@@ -25,5 +25,13 @@ function addStationElement(station) {
     list.appendChild(div);
   }
 
-document.getElementById("wishlist").innerHTML =
-  wishlist.map(item => `<li class="wishlist-item">${item}</li>`).join('');
+// Display wishlist using a loop
+const wishlistSection = document.getElementById("wishlist");
+const ul = document.createElement("ul");
+for (let i = 0; i < wishlist.length; i++) {
+  const li = document.createElement("li");
+  li.className = "wishlist-item";
+  li.textContent = wishlist[i];
+  ul.appendChild(li);
+}
+wishlistSection.appendChild(ul);

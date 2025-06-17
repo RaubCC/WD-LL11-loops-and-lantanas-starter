@@ -5,6 +5,10 @@ const wishlist = [
   "Dog-Friendly Water Station"
 ];
 
+document.getElementById("wishlist").innerHTML = wishlist
+  .map(item => `<li class="wishlist-item">${item}</li>`)
+  .join('');
+
 function addStationElement(station) {
     const list = document.getElementById("station-list");
     const div = document.createElement("div");
@@ -16,9 +20,6 @@ function addStationElement(station) {
     `;
     list.appendChild(div);
   }
-
-document.getElementById("wishlist").innerHTML =
-  wishlist.map(item => `<li class="wishlist-item">${item}</li>`).join('');
 
 // Display wishlist using a loop
 const wishlistSection = document.getElementById("wishlist");

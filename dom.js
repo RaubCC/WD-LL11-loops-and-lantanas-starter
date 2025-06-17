@@ -1,3 +1,18 @@
+const wishlist = [
+  "Butterfly Garden",
+  "Shaded Benches",
+  "Solar-Powered Lights",
+  "Dog-Friendly Water Station"
+];
+
+function addWishlistItemElement(item) {
+  const list = document.getElementById("wishlist");
+  const li = document.createElement("li");
+  li.className = "wishlist-item";
+  li.textContent = item;
+  list.appendChild(li);
+}
+
 function addStationElement(station) {
     const list = document.getElementById("station-list");
     const div = document.createElement("div");
@@ -9,4 +24,6 @@ function addStationElement(station) {
     `;
     list.appendChild(div);
   }
-  
+
+document.getElementById("wishlist").innerHTML =
+  wishlist.map(item => `<li class="wishlist-item">${item}</li>`).join('');
